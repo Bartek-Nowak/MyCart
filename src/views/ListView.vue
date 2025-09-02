@@ -32,7 +32,8 @@ const addProduct = () => {
   if (!newProductName.value || !newProductQuantity.value || !currentList.value) return
   listsStore.addProduct(listId, {
     name: newProductName.value,
-    quantity: `${newProductQuantity.value} ${newProductUnit.value}`
+    quantity: `${newProductQuantity.value} ${newProductUnit.value}`,
+    checked: false
   })
   newProductName.value = ''
   newProductQuantity.value = null
@@ -106,13 +107,17 @@ onMounted(() => {
         <ul class="mt-4 space-y-2">
           <li v-for="product in currentList.products" :key="product.id"
             class="flex justify-between items-center p-2 border rounded">
-            <div>
-              <span class="font-medium text-foreground">{{ product.name }}</span>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" v-model="product.checked" class="h-4 w-4" />
+              <span :class="{ 'line-through text-gray-400': product.checked }" class="font-medium text-foreground">
+                {{ product.name }}
+              </span>
               <span class="ml-2 text-sm text-muted-foreground">{{ product.quantity }}</span>
             </div>
             <Trash class="h-5 w-5 cursor-pointer text-red-500" @click="deleteProduct(product.id)" />
           </li>
         </ul>
+
       </div>
     </div>
   </PageWrapper>
