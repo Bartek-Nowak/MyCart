@@ -1,39 +1,121 @@
 # MyCart
 
-This template should help get you started developing with Vue 3 in Vite.
+A mobile-first shopping list application built with **Vue 3**, **Pinia**, **Capacitor**, and **SQLite**.
 
-## Recommended IDE Setup
+- Manage multiple lists and products.
+- Fully persistent storage on **Android** using SQLite.
+- Designed for native mobile deployment.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Type Support for `.vue` Imports in TS
+## Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Create, update, and delete shopping lists.
+- Add or remove products from lists.
+- Store data in a **SQLite database** on Android.
+- Reactive UI powered by **Vue 3 + Pinia**.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Prerequisites
 
-## Project Setup
+- Node.js >= 18
+- npm or yarn
+- Android Studio
+- Capacitor CLI
 
-```sh
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Run development server (Web)
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+> SQLite functionality will only work on Android, web will skip database initialization.
 
-```sh
+### 3. Build for production
+
+```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### 4. Copy build to Capacitor
 
-```sh
-npm run lint
+```bash
+npx cap copy android
 ```
+
+### 5. Open Android project
+
+```bash
+npx cap open android
+```
+
+---
+
+## Running on Android
+
+1. In Android Studio, select your device/emulator.
+2. Click **Run → Run 'app'**.
+3. The app will launch on your device/emulator with SQLite storage fully functional.
+
+---
+
+## Generating APK (Release)
+
+1. In Android Studio, go to **Build → Generate Signed Bundle / APK…**
+2. Choose **APK → Next**
+3. Create a new **Key Store** or use an existing one.
+4. Fill in alias, password, and key information.
+5. Select **Build Type = release**
+6. Click **Finish**
+7. APK will be generated in:
+
+```
+android/app/release/app-release.apk
+```
+
+Optional: build via terminal
+
+```bash
+cd android
+./gradlew assembleRelease
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├─ components/       # Vue components
+├─ stores/           # Pinia stores
+├─ views/            # Vue pages
+└─ main.ts           # App entry point
+
+dist/                 # Production build
+android/              # Capacitor Android project
+```
+
+---
+
+## Notes
+
+- SQLite is **only initialized on Android**.
+- For Web, database-related actions are skipped.
+- Make sure your device/emulator is running **Android API 29+** for full compatibility.
+
+---
+
+## License
+
+MIT License
