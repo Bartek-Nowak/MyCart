@@ -6,5 +6,10 @@
   "listNamePlaceholder": "List Name",
   "createListButton": "Create List",
   "numberOfItems": "Number of items",
-  "items": "Items"
+  "items": "Items",
+  "settings": "Settings",
+  "language": "Language",
+  "selectLanguage": "Select language",
+  "english": "English",
+  "polish": "Polish"
 }

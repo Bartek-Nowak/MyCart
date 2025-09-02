@@ -6,5 +6,10 @@
   "listNamePlaceholder": "Nazwa listy",
   "createListButton": "Utwórz listę",
   "numberOfItems": "Liczba pozycji",
-  "items": "Pozycje"
+  "items": "Pozycje",
+  "settings": "Ustawienia",
+  "language": "Język",
+  "selectLanguage": "Wybierz język",
+  "english": "Angielski",
+  "polish": "Polski"
 }
