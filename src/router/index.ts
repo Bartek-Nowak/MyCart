@@ -1,15 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ListsDashboardView from '@/views/ListsDashboardView.vue'
+import ListView from '@/views/ListView.vue'
+import NewListView from '@/views/NewListView.vue'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'listsDashboard',
-      component: ListsDashboardView,
-    },
-  ],
+const routes = [
+  {
+    path: '/',
+    name: 'ListsDashboard',
+    component: ListsDashboardView,
+  },
+  {
+    path: '/list/:id',
+    name: 'ListView',
+    component: ListView,
+    props: true,
+  },
+  {
+    path: '/new-list',
+    name: 'NewList',
+    component: NewListView,
+  },
+]
+
+export const router = createRouter({
+  history: createWebHistory(),
+  routes,
 })
-
-export default router
