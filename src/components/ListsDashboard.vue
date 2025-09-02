@@ -43,17 +43,19 @@ const openDeleteDialog = (id: string) => {
     <h1 class="text-foreground mb-4 text-2xl font-semibold">🛒 Your Lists</h1>
 
     <div class="grid grid-cols-2 gap-4">
-      <Card v-for="list in listsStore.lists" :key="list.id" @click="goToList(list.id)"
-        :class="`flex aspect-square cursor-pointer flex-col justify-between border-4 p-4 transition hover:shadow-lg ${list.color}`">
-        <div class="flex items-start justify-between">
-          <span class="text-foreground font-medium">{{ list.name }}</span>
+      <div v-for="list in listsStore.lists" :key="list.id" class="relative" @click="goToList(list.id)">
+        <span :class="`absolute -inset-1 ${list.color} rounded-xl z-0`"></span>
+        <Card
+          class="relative z-10 flex aspect-square cursor-pointer flex-col justify-between p-4 transition hover:shadow-lg">
+          <div class="flex items-start justify-between">
+            <span class="text-foreground font-medium">{{ list.name }}</span>
 
-          <Trash class="text-foreground size-5 cursor-pointer hover:text-red-500"
-            @click.stop="openDeleteDialog(list.id)" />
-        </div>
-
-        <span class="text-muted-foreground mt-2 text-sm">{{ list.items }} items</span>
-      </Card>
+            <Trash class="text-foreground size-5 cursor-pointer hover:text-red-500"
+              @click.stop="openDeleteDialog(list.id)" />
+          </div>
+          <span class="text-muted-foreground mt-2 text-sm">{{ list.items }} items</span>
+        </Card>
+      </div>
 
       <Card
         class="border-foreground/40 flex cursor-pointer items-center justify-center border-2 border-dashed p-4 transition hover:shadow-lg">
