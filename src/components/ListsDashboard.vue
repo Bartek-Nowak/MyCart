@@ -47,12 +47,13 @@ const openDeleteDialog = (id: string) => {
         <span :class="`absolute -inset-1 ${list.color} rounded-xl z-0`"></span>
         <Card
           class="relative z-10 flex aspect-square cursor-pointer flex-col justify-between p-4 transition hover:shadow-lg">
-          <div class="flex items-start justify-between">
-            <span class="text-foreground font-medium">{{ list.name }}</span>
+          <div class="relative">
+            <span class="text-foreground font-medium break-words block pr-8">{{ list.name }}</span>
 
-            <Trash class="text-foreground size-5 cursor-pointer hover:text-red-500"
+            <Trash class="absolute top-0 right-0 text-foreground size-5 cursor-pointer hover:text-red-500"
               @click.stop="openDeleteDialog(list.id)" />
           </div>
+
           <span class="text-muted-foreground mt-2 text-sm">{{ list.items }} items</span>
         </Card>
       </div>
