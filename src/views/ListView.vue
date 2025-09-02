@@ -74,30 +74,33 @@ onMounted(() => {
 
       <div v-if="currentList">
         <p class="text-muted-foreground">Number of items: {{ currentList.items }}</p>
-        <div class="flex gap-2 mt-4 items-center">
-          <Input v-model="newProductName" placeholder="Product name" class="flex-1" />
 
-          <NumberField v-model="newProductQuantity" :min="numberFieldProps.min" :step="numberFieldProps.step"
-            :default-value="numberFieldProps.min"
-            :format-options="{ minimumFractionDigits: numberFieldProps.precision, maximumFractionDigits: numberFieldProps.precision }"
-            class="w-20 flex-none">
-            <NumberFieldContent>
-              <NumberFieldDecrement />
-              <NumberFieldInput />
-              <NumberFieldIncrement />
-            </NumberFieldContent>
-          </NumberField>
+        <div class="mt-4 space-y-2">
+          <Input v-model="newProductName" placeholder="Product name" class="w-full" />
 
-          <Select v-model="newProductUnit" class="w-24">
-            <SelectTrigger>
-              <SelectValue placeholder="Unit" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem v-for="unit in units" :key="unit" :value="unit">{{ unit }}</SelectItem>
-            </SelectContent>
-          </Select>
+          <div class="flex gap-2">
+            <NumberField v-model="newProductQuantity" :min="numberFieldProps.min" :step="numberFieldProps.step"
+              :default-value="numberFieldProps.min"
+              :format-options="{ minimumFractionDigits: numberFieldProps.precision, maximumFractionDigits: numberFieldProps.precision }"
+              class="flex-1">
+              <NumberFieldContent>
+                <NumberFieldDecrement />
+                <NumberFieldInput />
+                <NumberFieldIncrement />
+              </NumberFieldContent>
+            </NumberField>
 
-          <Button @click="addProduct">Add</Button>
+            <Select v-model="newProductUnit" class="flex-1">
+              <SelectTrigger>
+                <SelectValue placeholder="Unit" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem v-for="unit in units" :key="unit" :value="unit">{{ unit }}</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <Button class="w-full" @click="addProduct">Add</Button>
         </div>
 
         <ul class="mt-4 space-y-2">
