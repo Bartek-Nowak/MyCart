@@ -67,12 +67,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <PageWrapper>
+  <PageWrapper :title="currentList?.name">
     <div class="bg-background min-h-screen p-4 max-w-md mx-auto space-y-4">
-      <h1 class="text-2xl font-semibold text-foreground">
-        {{ currentList?.name || 'List not found' }}
-      </h1>
-
       <div v-if="currentList">
         <p class="text-muted-foreground">Number of items: {{ currentList.items }}</p>
 

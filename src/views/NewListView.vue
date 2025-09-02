@@ -35,9 +35,8 @@ const createList = () => {
 </script>
 
 <template>
-  <PageWrapper>
+  <PageWrapper title="Create New List">
     <div class="bg-background mx-auto min-h-screen max-w-md p-4 space-y-4">
-      <h1 class="text-2xl font-semibold text-foreground">🆕 Create New List</h1>
 
       <Card class="p-4 space-y-4">
         <Input v-model="listName" placeholder="List Name" />
