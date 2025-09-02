@@ -70,10 +70,10 @@ onMounted(() => {
   <PageWrapper :title="currentList?.name">
     <div class="bg-background min-h-screen p-4 max-w-md mx-auto space-y-4">
       <div v-if="currentList">
-        <p class="text-muted-foreground">Number of items: {{ currentList.items }}</p>
+        <p class="text-muted-foreground">{{ $t('numberOfItems') }}: {{ currentList.items }}</p>
 
         <div class="mt-4 space-y-2">
-          <Input v-model="newProductName" placeholder="Product name" class="w-full" />
+          <Input v-model="newProductName" :placeholder="$t('productName')" class="w-full" />
 
           <div class="flex gap-2">
             <NumberField v-model="newProductQuantity" :min="numberFieldProps.min" :step="numberFieldProps.step"
@@ -97,7 +97,7 @@ onMounted(() => {
             </Select>
           </div>
 
-          <Button class="w-full" @click="addProduct">Add</Button>
+          <Button class="w-full" @click="addProduct">{{ $t('addProduct') }}</Button>
         </div>
 
         <ul class="mt-4 space-y-2">

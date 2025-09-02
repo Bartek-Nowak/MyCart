@@ -40,7 +40,7 @@ const openDeleteDialog = (id: string) => {
 
 <template>
   <div class="bg-background mx-auto min-h-screen max-w-md p-4">
-    <h1 class="text-foreground mb-4 text-2xl font-semibold">🛒 Your Lists</h1>
+    <h1 class="text-foreground mb-4 text-2xl font-semibold">🛒 {{ $t('myLists') }}</h1>
 
     <div class="grid grid-cols-2 gap-4">
       <div v-for="list in listsStore.lists" :key="list.id" class="relative" @click="goToList(list.id)">
@@ -53,8 +53,7 @@ const openDeleteDialog = (id: string) => {
             <Trash class="absolute top-0 right-0 text-foreground size-5 cursor-pointer hover:text-red-500"
               @click.stop="openDeleteDialog(list.id)" />
           </div>
-
-          <span class="text-muted-foreground mt-2 text-sm">{{ list.items }} items</span>
+          <span class="text-muted-foreground mt-2 text-sm">{{ list.items }} {{ $t('items') }}</span>
         </Card>
       </div>
 

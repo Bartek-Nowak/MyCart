@@ -35,11 +35,10 @@ const createList = () => {
 </script>
 
 <template>
-  <PageWrapper title="Create New List">
+  <PageWrapper :title="$t('createNewListTitle')">
     <div class="bg-background mx-auto min-h-screen max-w-md p-4 space-y-4">
-
       <Card class="p-4 space-y-4">
-        <Input v-model="listName" placeholder="List Name" />
+        <Input v-model="listName" :placeholder="$t('listNamePlaceholder')" />
         <div class="flex flex-wrap gap-3 mt-2">
           <div v-for="color in colors" :key="color" :class="[
             'w-10 h-10 rounded-full cursor-pointer transition-all duration-200 shadow-md',
@@ -48,7 +47,7 @@ const createList = () => {
           ]" @click="listColor = color" />
         </div>
 
-        <Button class="mt-4 w-full" @click="createList">Create List</Button>
+        <Button class="mt-4 w-full" @click="createList">{{ $t('createListButton') }}</Button>
       </Card>
     </div>
   </PageWrapper>
