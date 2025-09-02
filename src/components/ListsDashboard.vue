@@ -58,7 +58,7 @@ const openDeleteDialog = (id: string) => {
       </div>
 
       <Card
-        class="border-foreground/40 flex cursor-pointer items-center justify-center border-2 border-dashed p-4 transition hover:shadow-lg">
+        class="border-foreground/40 flex cursor-pointer items-center justify-center border-2 border-dashed p-4 transition hover:shadow-lg aspect-square">
         <Button variant="ghost" class="text-foreground flex h-full w-full items-center justify-center"
           @click="router.push({ name: 'NewList' })">
           <Plus class="size-6" />
