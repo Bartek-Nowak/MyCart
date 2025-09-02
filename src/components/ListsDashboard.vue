@@ -40,7 +40,6 @@ const openDeleteDialog = (id: string) => {
 
 <template>
   <div class="bg-background mx-auto min-h-screen max-w-md p-4">
-    <h1 class="text-foreground mb-4 text-2xl font-semibold">🛒 {{ $t('myLists') }}</h1>
 
     <div class="grid grid-cols-2 gap-4">
       <div v-for="list in listsStore.lists" :key="list.id" class="relative" @click="goToList(list.id)">
