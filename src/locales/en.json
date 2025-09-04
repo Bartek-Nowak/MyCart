@@ -11,5 +11,7 @@
   "language": "Language",
   "selectLanguage": "Select language",
   "english": "English",
-  "polish": "Polish"
+  "polish": "Polish",
+  "selectTheme": "Select theme",
+  "theme": "Theme"
 }
