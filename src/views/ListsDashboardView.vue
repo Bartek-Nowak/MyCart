@@ -11,7 +11,7 @@ const goToSettings = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-background">
+  <div class="bg-background">
     <header class="flex justify-between items-center gap-4 p-4 border-b border-muted-foreground/20">
       <h1 class="text-2xl font-semibold text-foreground">🛒 {{ $t('myLists') }}</h1>
 

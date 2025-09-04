@@ -39,7 +39,7 @@ const openDeleteDialog = (id: string) => {
 </script>
 
 <template>
-  <div class="bg-background mx-auto min-h-screen max-w-md p-4">
+  <div class="bg-background mx-auto max-w-md p-4">
 
     <div class="grid grid-cols-2 gap-4">
       <div v-for="list in listsStore.lists" :key="list.id" class="relative" @click="goToList(list.id)">

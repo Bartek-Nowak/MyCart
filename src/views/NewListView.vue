@@ -36,7 +36,7 @@ const createList = () => {
 
 <template>
   <PageWrapper :title="$t('createNewListTitle')">
-    <div class="bg-background mx-auto min-h-screen max-w-md p-4 space-y-4">
+    <div class="bg-background mx-auto max-w-md p-4 space-y-4">
       <Card class="p-4 space-y-4">
         <Input v-model="listName" :placeholder="$t('listNamePlaceholder')" />
         <div class="flex flex-wrap gap-3 mt-2">

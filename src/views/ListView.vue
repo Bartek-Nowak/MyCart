@@ -68,7 +68,7 @@ onMounted(() => {
 
 <template>
   <PageWrapper :title="currentList?.name">
-    <div class="bg-background min-h-screen p-4 max-w-md mx-auto space-y-4">
+    <div class="bg-background p-4 max-w-md mx-auto space-y-4">
       <div v-if="currentList">
         <p class="text-muted-foreground">{{ $t('numberOfItems') }}: {{ currentList.items }}</p>
 
