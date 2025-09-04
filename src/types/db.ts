@@ -13,3 +13,10 @@ export interface List {
   items: number
   products: Product[]
 }
+
+export interface Setting {
+  id: string
+  name: string
+  value: string
+  type: string
+}

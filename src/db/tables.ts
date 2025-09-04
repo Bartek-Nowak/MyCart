@@ -26,9 +26,10 @@ export const TABLES = {
     sql: `
       CREATE TABLE IF NOT EXISTS settings (
         key TEXT PRIMARY KEY,
-        value TEXT
+        value TEXT,
+        type TEXT
       );
     `,
-    columns: ['key', 'value'] as const,
+    columns: ['key', 'value', 'type'] as const,
   },
 }
